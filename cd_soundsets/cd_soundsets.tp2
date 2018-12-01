@@ -1,0 +1,71 @@
+BACKUP ~cd_soundsets/backup~ // location to store files for uninstall purposes
+AUTHOR ~pcamagna@beamdog.com~
+
+LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/english/setup.tra~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Begin core component                             \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @0
+
+INCLUDE ~%MOD_FOLDER%/tph/cd_add_soundset.tph~ // includes the macro that does the work
+
+COPY ~%MOD_FOLDER%/sounds~ ~lang/en_us/sounds~ // change en_us to the appropriate language folder
+COPY ~%MOD_FOLDER%/wav~    ~override~
+
+LAF cd_add_soundset 
+  INT_VAR 
+    cd_action1      = RESOLVE_STR_REF(@1)  // i
+    cd_action2      = RESOLVE_STR_REF(@2)  // j
+    cd_action3      = RESOLVE_STR_REF(@3)  // k
+    cd_action4      = RESOLVE_STR_REF(@4)  // s
+    cd_action5      = RESOLVE_STR_REF(@5)  // t
+    cd_action6      = RESOLVE_STR_REF(@6)  // u
+    cd_action7      = RESOLVE_STR_REF(@7)  // v
+    cd_battlecry1   = RESOLVE_STR_REF(@8)  // a
+    cd_battlecry2   = RESOLVE_STR_REF(@9)  // 8
+    cd_battlecry3   = RESOLVE_STR_REF(@10) // 9
+    cd_battlecry4   = RESOLVE_STR_REF(@11)   // _ (unofficial)
+    cd_battlecry5   = RESOLVE_STR_REF(@12)   // - (unofficial)
+    cd_bored        = RESOLVE_STR_REF(@13) // d
+    cd_breaking_pt  = RESOLVE_STR_REF(@14)   // ! (unofficial)
+    cd_city         = RESOLVE_STR_REF(@15) // o
+    cd_common1      = RESOLVE_STR_REF(@16) // f
+    cd_common2      = RESOLVE_STR_REF(@17) // g
+    cd_common3      = RESOLVE_STR_REF(@18) // h
+    cd_common4      = RESOLVE_STR_REF(@19) // 0
+    cd_common5      = RESOLVE_STR_REF(@20)   // @ (unofficial)
+    cd_common6      = RESOLVE_STR_REF(@21)   // # (unofficial)
+    cd_criticalhit  = RESOLVE_STR_REF(@22) // z
+    cd_criticalmiss = RESOLVE_STR_REF(@23) // 1 (number)
+    cd_damage       = RESOLVE_STR_REF(@24) // l (letter)
+    cd_day          = RESOLVE_STR_REF(@25) // q
+    cd_disrupted    = RESOLVE_STR_REF(@26) // 6
+    cd_dungeon      = RESOLVE_STR_REF(@27) // p
+    cd_dying        = RESOLVE_STR_REF(@28) // m
+    cd_forest       = RESOLVE_STR_REF(@29) // n
+    cd_gen_death    = RESOLVE_STR_REF(@30) // w
+    cd_happy        = RESOLVE_STR_REF(@31)   // $ (unofficial)
+    cd_hurt         = RESOLVE_STR_REF(@32) // e
+    cd_immune       = RESOLVE_STR_REF(@33) // 2
+    cd_inventory    = RESOLVE_STR_REF(@34) // 3
+    cd_leader       = RESOLVE_STR_REF(@35) // b
+    cd_morale_break = RESOLVE_STR_REF(@36)   // % (unofficial)
+    cd_night        = RESOLVE_STR_REF(@37) // r
+    cd_pickpocket   = RESOLVE_STR_REF(@38) // 4
+    cd_rare1        = RESOLVE_STR_REF(@39) // x
+    cd_rare2        = RESOLVE_STR_REF(@40) // y
+    cd_rare3        = RESOLVE_STR_REF(@41)   // & (unofficial, only used in IWDEE)
+    cd_rare4        = RESOLVE_STR_REF(@42)   // ^ (unofficial, only used in IWDEE)
+    cd_shadows      = RESOLVE_STR_REF(@43) // 5 
+    cd_tired        = RESOLVE_STR_REF(@44) // c
+    cd_trap         = RESOLVE_STR_REF(@45) // 7
+    cd_unhappy_1    = RESOLVE_STR_REF(@46)   // = (unofficial)
+    cd_unhappy_2    = RESOLVE_STR_REF(@47)   // ~ (unofficial)
+  STR_VAR cd_name = "BOB"
+END  
