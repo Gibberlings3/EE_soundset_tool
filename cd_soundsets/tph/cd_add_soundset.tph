@@ -89,6 +89,8 @@ DEFINE_ACTION_FUNCTION cd_add_soundset
     cd_dialog_default    = "-1"
 /// Added to pad missing and/or completely bugged IDS index.
     cd_padding           = "-1"
+/// Voice selection menu text
+    cd_select_name       = "-1"
   STR_VAR cd_name = ""
 
 BEGIN
@@ -111,6 +113,14 @@ BEGIN
 
   COPY ~./inlined/cd_add_soundset.tph~  ~./inlined/cd_add_soundset.tph~  EVALUATE_BUFFER
   REINCLUDE ~./inlined/cd_add_soundset.tph~
+
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~M_cdsnd.lua~ BEGIN
+    <<<<<<<< ./inlined/M_cdsnd.lua
+    >>>>>>>>
+    COPY ~./inlined/M_cdsnd.lua~ ~override~
+  END
+
+  APPEND ~M_cdsnd.lua~ ~filenames_stringrefs['%cd_name%'] = {%cd_select_name%, 2}~  
 
   COPY_EXISTING ~charsnd.2da~ ~override~
     PRETTY_PRINT_2DA
