@@ -60,13 +60,13 @@ LAF cd_add_soundset
     cd_disrupted          = RESOLVE_STR_REF(@38) //  6
     cd_dungeon            = RESOLVE_STR_REF(@39) //  p
     cd_dying1             = RESOLVE_STR_REF(@40) //  m
-    cd_dying2             = RESOLVE_STR_REF(@41) //  p_
+    cd_dying2             = RESOLVE_STR_REF(@41) //  p_ (unofficial)
     cd_forest             = RESOLVE_STR_REF(@42) //  n
     cd_gen_death1         = RESOLVE_STR_REF(@43) //  w
-    cd_gen_death2         = RESOLVE_STR_REF(@44) //  q_
+    cd_gen_death2         = RESOLVE_STR_REF(@44) //  q_ (unofficial)
     cd_happy              = RESOLVE_STR_REF(@45) //  r_ (unofficial)
     cd_hurt1              = RESOLVE_STR_REF(@46) //  e
-    cd_hurt2              = RESOLVE_STR_REF(@47) //  s_
+    cd_hurt2              = RESOLVE_STR_REF(@47) //  s_ (unofficial)
     cd_immune             = RESOLVE_STR_REF(@48) //  2
     cd_inventory          = RESOLVE_STR_REF(@49) //  3
     cd_leader1            = RESOLVE_STR_REF(@50) //  b
@@ -89,5 +89,6 @@ LAF cd_add_soundset
     cd_trap               = RESOLVE_STR_REF(@67) //  7
     cd_unhappy_1          = RESOLVE_STR_REF(@68) //  5_ (unofficial)
     cd_unhappy_2          = RESOLVE_STR_REF(@69) //  6_ (unofficial)
+    cd_select_name        = RESOLVE_STR_REF(@70) // selection name on the Voice menu screen
   STR_VAR cd_name = "BOB"
 END  
