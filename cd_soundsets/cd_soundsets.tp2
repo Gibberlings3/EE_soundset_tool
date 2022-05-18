@@ -1,5 +1,5 @@
 BACKUP ~cd_soundsets/backup~ // location to store files for uninstall purposes
-AUTHOR ~pcamagna@yahoo.com~
+SUPPORT ~https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/~
 
 LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/english/setup.tra~
 
@@ -27,10 +27,8 @@ LAF cd_add_soundset
     cd_action5            = RESOLVE_STR_REF(@5) //  t
     cd_action6            = RESOLVE_STR_REF(@6) //  u
     cd_action7            = RESOLVE_STR_REF(@7) //  v
-    cd_action_rare1       = RESOLVE_STR_REF(@8) //  x
-    cd_action_rare2       = RESOLVE_STR_REF(@9) //  y
-    cd_action_rare3       = RESOLVE_STR_REF(@10) //  a_ (unofficial)
-    cd_action_rare4       = RESOLVE_STR_REF(@11) //  b_ (unofficial)
+    cd_action_rare1       = RESOLVE_STR_REF(@8) //  x - warning: action rare 1 only works on BG2EE v2.6: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
+    cd_action_rare2       = RESOLVE_STR_REF(@9) //  y - warning: action rare 1 only works on BG2EE v2.6: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
     cd_attack1            = RESOLVE_STR_REF(@12) //  c_ (unofficial)
     cd_attack2            = RESOLVE_STR_REF(@13) //  d_ (unofficial)
     cd_attack3            = RESOLVE_STR_REF(@14) //  e_ (unofficial)
@@ -50,12 +48,12 @@ LAF cd_add_soundset
     cd_common4            = RESOLVE_STR_REF(@28) //  0
     cd_common5            = RESOLVE_STR_REF(@29) //  k_ (unofficial)
     cd_common6            = RESOLVE_STR_REF(@30) //  l_ (unofficial, letter)
-    cd_common7            = RESOLVE_STR_REF(@31) //  m_ (unofficial)
+    cd_common7            = RESOLVE_STR_REF(@31) //  m_ (unofficial) - warning: common 7 doesn't work at all on v2.6: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
     cd_criticalhit        = RESOLVE_STR_REF(@32) //  z
     cd_criticalmiss       = RESOLVE_STR_REF(@33) //  1  (number)
     cd_damage1            = RESOLVE_STR_REF(@34) //  l  (letter)
-    cd_damage2            = RESOLVE_STR_REF(@35) //  n_ (unofficial)
-    cd_damage3            = RESOLVE_STR_REF(@36) //  o_ (unofficial)
+//    cd_damage2            = RESOLVE_STR_REF(@35) //  n_ (unofficial) - warning: damage 2 actively causes problems on v2.6 and will be skipped: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
+//    cd_damage3            = RESOLVE_STR_REF(@36) //  o_ (unofficial) - warning: damage 3 actively causes problems on v2.6 and will be skipped: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
     cd_day                = RESOLVE_STR_REF(@37) //  q
     cd_disrupted          = RESOLVE_STR_REF(@38) //  6
     cd_dungeon            = RESOLVE_STR_REF(@39) //  p
@@ -79,10 +77,6 @@ LAF cd_add_soundset
     cd_select_rare2       = RESOLVE_STR_REF(@57) //  x_ (unofficial)
     cd_select_rare3       = RESOLVE_STR_REF(@58) //  y_ (unofficial)
     cd_select_rare4       = RESOLVE_STR_REF(@59) //  z_ (unofficial)
-    cd_select_rare5       = RESOLVE_STR_REF(@60) //  0_ (unofficial)
-    cd_select_rare6       = RESOLVE_STR_REF(@61) //  1_ (unofficial, number)
-    cd_select_rare7       = RESOLVE_STR_REF(@62) //  2_ (unofficial)
-    cd_select_rare8       = RESOLVE_STR_REF(@63) //  3_ (unofficial)
     cd_shadows            = RESOLVE_STR_REF(@64) //  5
     cd_tired1             = RESOLVE_STR_REF(@65) //  c
     cd_tired2             = RESOLVE_STR_REF(@66) //  4_ (unofficial)

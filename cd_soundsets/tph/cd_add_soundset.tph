@@ -9,8 +9,6 @@ DEFINE_ACTION_FUNCTION cd_add_soundset
     cd_action7           = "-1" //  v
     cd_action_rare1      = "-1" //  x
     cd_action_rare2      = "-1" //  y
-    cd_action_rare3      = "-1" //  a_ (unofficial)
-    cd_action_rare4      = "-1" //  b_ (unofficial)
     cd_attack1           = "-1" //  c_ (unofficial)
     cd_attack2           = "-1" //  d_ (unofficial)
     cd_attack3           = "-1" //  e_ (unofficial)
@@ -59,17 +57,13 @@ DEFINE_ACTION_FUNCTION cd_add_soundset
     cd_select_rare2      = "-1" //  x_ (unofficial)
     cd_select_rare3      = "-1" //  y_ (unofficial)
     cd_select_rare4      = "-1" //  z_ (unofficial)
-    cd_select_rare5      = "-1" //  0_ (unofficial)
-    cd_select_rare6      = "-1" //  1_ (unofficial, number)
-    cd_select_rare7      = "-1" //  2_ (unofficial)
-    cd_select_rare8      = "-1" //  3_ (unofficial)
     cd_shadows           = "-1" //  5
     cd_tired1            = "-1" //  c
     cd_tired2            = "-1" //  4_ (unofficial)
     cd_trap              = "-1" //  7
     cd_unhappy_1         = "-1" //  5_ (unofficial)
-    cd_unhappy_2         = "-1" //  6_ (unofficial)
-/// Added in 2.6 but only used by NPCs.
+    cd_unhappy_2         = "-1" //  6_ (unofficial)    
+// Added in 2.6 but only used by NPCs.
     cd_interaction1      = "-1"
     cd_interaction2      = "-1"
     cd_interaction3      = "-1"
@@ -87,28 +81,28 @@ DEFINE_ACTION_FUNCTION cd_add_soundset
     cd_insulted3         = "-1"
     cd_dialog_hostile    = "-1"
     cd_dialog_default    = "-1"
-/// Added to pad missing and/or completely bugged IDS index.
-    cd_padding           = "-1"
-/// Voice selection menu text
+// Voice selection menu text
     cd_select_name       = "-1"
   STR_VAR cd_name = ""
 
 BEGIN
 
-  ACTION_IF GAME_IS ~bgee~ BEGIN
-    <<<<<<<<./inlined/cd_add_soundset.tph
-    APPEND_COL ~charsnd.2da~ ~$ $ %cd_name% %cd_morale_break1% %cd_happy% %cd_unhappy_1% %cd_unhappy_2% %cd_breaking_pt% %cd_leader1% %cd_tired1% %cd_bored1% %cd_battlecry1% %cd_battlecry2% %cd_battlecry3% %cd_battlecry4% %cd_battlecry5% %cd_attack1% %cd_attack2% %cd_attack3% %cd_attack4% %cd_damage1% %cd_dying1% %cd_hurt1% %cd_forest% %cd_city% %cd_dungeon% %cd_day% %cd_night% %cd_common1% %cd_common2% %cd_common3% %cd_common4% %cd_common5% %cd_common6% %cd_action1% %cd_action2% %cd_action3% %cd_select_rare1% %cd_select_rare2% %cd_select_rare3% %cd_select_rare4% %cd_interaction1% %cd_interaction2% %cd_interaction3% %cd_interaction4% %cd_interaction5% %cd_action_rare1% %cd_action_rare2% %cd_action_rare3% %cd_action_rare4% %cd_padding% %cd_padding% %cd_special1% %cd_special2% %cd_special3% %cd_gen_death1% %cd_specific_death% %cd_complimented1% %cd_complimented2% %cd_complimented3% %cd_insulted1% %cd_insulted2% %cd_insulted3% %cd_dialog_hostile% %cd_dialog_default% %cd_select_rare5% %cd_select_rare6% %cd_criticalhit% %cd_criticalmiss% %cd_immune% %cd_inventory% %cd_pickpocket% %cd_shadows% %cd_disrupted% %cd_trap% %cd_padding% %cd_padding% %cd_select_rare5% %cd_select_rare6% %cd_select_rare7% %cd_select_rare8% %cd_action4% %cd_action5% %cd_action6% %cd_action7% %cd_morale_break2% %cd_leader2% %cd_tired2% %cd_bored2% %cd_hurt2% %cd_common7% %cd_damage2% %cd_damage3% %cd_dying2% %cd_gen_death2% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding%~
-    >>>>>>>>
-  END
+  OUTER_SET cd_padding = "-1" // Added to pad missing and/or completely bugged IDS index.
+  ACTION_TO_UPPER cd_name
+  
+  ACTION_IF !FILE_EXISTS ~data/patch27.bif~ BEGIN // working under assumption that 1) next patch is 2.7 and b) this gets fixed
+    OUTER_SET cd_damage2 = cd_padding
+    OUTER_SET cd_damage3 = cd_padding
+  END  
+  
   ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
     <<<<<<<<./inlined/cd_add_soundset.tph
-    APPEND_COL ~charsnd.2da~ ~$ $ %cd_name% %cd_morale_break1% %cd_happy% %cd_unhappy_1% %cd_unhappy_2% %cd_breaking_pt% %cd_leader1% %cd_tired1% %cd_bored1% %cd_battlecry1% %cd_battlecry2% %cd_battlecry3% %cd_battlecry4% %cd_battlecry5% %cd_attack1% %cd_attack2% %cd_attack3% %cd_attack4% %cd_damage1% %cd_dying1% %cd_hurt1% %cd_forest% %cd_city% %cd_dungeon% %cd_day% %cd_night% %cd_common1% %cd_common2% %cd_common3% %cd_common4% %cd_common5% %cd_common6% %cd_action1% %cd_action2% %cd_action3% %cd_select_rare5% %cd_select_rare6% %cd_select_rare7% %cd_select_rare8% %cd_interaction1% %cd_interaction2% %cd_interaction3% %cd_interaction4% %cd_interaction5% %cd_action_rare1% %cd_action_rare2% %cd_action_rare3% %cd_action_rare4% %cd_padding% %cd_padding% %cd_special1% %cd_special2% %cd_special3% %cd_gen_death1% %cd_specific_death% %cd_complimented1% %cd_complimented2% %cd_complimented3% %cd_insulted1% %cd_insulted2% %cd_insulted3% %cd_dialog_hostile% %cd_dialog_default% %cd_select_rare5% %cd_select_rare6% %cd_criticalhit% %cd_criticalmiss% %cd_immune% %cd_inventory% %cd_pickpocket% %cd_shadows% %cd_disrupted% %cd_trap% %cd_padding% %cd_padding% %cd_select_rare1% %cd_select_rare2% %cd_select_rare3% %cd_select_rare4% %cd_action4% %cd_action5% %cd_action6% %cd_action7% %cd_morale_break2% %cd_leader2% %cd_tired2% %cd_bored2% %cd_hurt2% %cd_common7% %cd_damage2% %cd_damage3% %cd_dying2% %cd_gen_death2% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding%~
+    APPEND_COL ~charsnd.2da~ ~$ $ %cd_name% %cd_morale_break1% %cd_happy% %cd_unhappy_1% %cd_unhappy_2% %cd_breaking_pt% %cd_leader1% %cd_tired1% %cd_bored1% %cd_battlecry1% %cd_battlecry2% %cd_battlecry3% %cd_battlecry4% %cd_battlecry5% %cd_attack1% %cd_attack2% %cd_attack3% %cd_attack4% %cd_damage1% %cd_dying1% %cd_hurt1% %cd_forest% %cd_city% %cd_dungeon% %cd_day% %cd_night% %cd_common1% %cd_common2% %cd_common3% %cd_common4% %cd_common5% %cd_common6% %cd_action1% %cd_action2% %cd_action3% %cd_action4% %cd_action5% %cd_action6% %cd_action7% %cd_interaction1% %cd_interaction2% %cd_interaction3% %cd_interaction4% %cd_interaction5% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_special1% %cd_special2% %cd_special3% %cd_gen_death1% %cd_specific_death% %cd_complimented1% %cd_complimented2% %cd_complimented3% %cd_insulted1% %cd_insulted2% %cd_insulted3% %cd_dialog_hostile% %cd_dialog_default% %cd_action_rare1% %cd_action_rare2% %cd_criticalhit% %cd_criticalmiss% %cd_immune% %cd_inventory% %cd_pickpocket% %cd_shadows% %cd_disrupted% %cd_trap% %cd_padding% %cd_padding% %cd_select_rare1% %cd_select_rare2% %cd_select_rare3% %cd_select_rare4% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_morale_break2% %cd_leader2% %cd_tired2% %cd_bored2% %cd_hurt2% %cd_common7% %cd_damage2% %cd_damage3% %cd_dying2% %cd_gen_death2% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding%~
     >>>>>>>>
-  END
-  ACTION_IF GAME_IS ~iwdee~ BEGIN
+  END ELSE BEGIN // bgee, iwdee
     <<<<<<<<./inlined/cd_add_soundset.tph
-    APPEND_COL ~charsnd.2da~ ~$ $ %cd_name% %cd_morale_break1% %cd_happy% %cd_unhappy_1% %cd_unhappy_2% %cd_breaking_pt% %cd_leader1% %cd_tired1% %cd_bored1% %cd_battlecry1% %cd_battlecry2% %cd_battlecry3% %cd_battlecry4% %cd_battlecry5% %cd_attack1% %cd_attack2% %cd_attack3% %cd_attack4% %cd_damage1% %cd_dying1% %cd_hurt1% %cd_forest% %cd_city% %cd_dungeon% %cd_day% %cd_night% %cd_common1% %cd_common2% %cd_common3% %cd_common4% %cd_common5% %cd_common6% %cd_action1% %cd_action2% %cd_action3% %cd_select_rare1% %cd_select_rare2% %cd_select_rare3% %cd_select_rare4% %cd_interaction1% %cd_interaction2% %cd_interaction3% %cd_interaction4% %cd_interaction5% %cd_action_rare1% %cd_action_rare2% %cd_action_rare3% %cd_action_rare4% %cd_padding% %cd_padding% %cd_special1% %cd_special2% %cd_special3% %cd_gen_death1% %cd_specific_death% %cd_complimented1% %cd_complimented2% %cd_complimented3% %cd_insulted1% %cd_insulted2% %cd_insulted3% %cd_dialog_hostile% %cd_dialog_default% %cd_padding% %cd_padding% %cd_criticalhit% %cd_criticalmiss% %cd_immune% %cd_inventory% %cd_pickpocket% %cd_shadows% %cd_disrupted% %cd_trap% %cd_padding% %cd_padding% %cd_select_rare5% %cd_select_rare6% %cd_select_rare7% %cd_select_rare8% %cd_action4% %cd_action5% %cd_action6% %cd_action7% %cd_morale_break2% %cd_leader2% %cd_tired2% %cd_bored2% %cd_hurt2% %cd_common7% %cd_damage2% %cd_damage3% %cd_dying2% %cd_gen_death2% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding%~
-    >>>>>>>>
+    APPEND_COL ~charsnd.2da~ ~$ $ %cd_name% %cd_morale_break1% %cd_happy% %cd_unhappy_1% %cd_unhappy_2% %cd_breaking_pt% %cd_leader1% %cd_tired1% %cd_bored1% %cd_battlecry1% %cd_battlecry2% %cd_battlecry3% %cd_battlecry4% %cd_battlecry5% %cd_attack1% %cd_attack2% %cd_attack3% %cd_attack4% %cd_damage1% %cd_dying1% %cd_hurt1% %cd_forest% %cd_city% %cd_dungeon% %cd_day% %cd_night% %cd_common1% %cd_common2% %cd_common3% %cd_common4% %cd_common5% %cd_common6% %cd_action1% %cd_action2% %cd_action3% %cd_select_rare1% %cd_select_rare2% %cd_select_rare3% %cd_select_rare4% %cd_interaction1% %cd_interaction2% %cd_interaction3% %cd_interaction4% %cd_interaction5% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_special1% %cd_special2% %cd_special3% %cd_gen_death1% %cd_specific_death% %cd_complimented1% %cd_complimented2% %cd_complimented3% %cd_insulted1% %cd_insulted2% %cd_insulted3% %cd_dialog_hostile% %cd_dialog_default% %cd_action_rare1% %cd_action_rare2% %cd_criticalhit% %cd_criticalmiss% %cd_immune% %cd_inventory% %cd_pickpocket% %cd_shadows% %cd_disrupted% %cd_trap% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_action4% %cd_action5% %cd_action6% %cd_action7% %cd_morale_break2% %cd_leader2% %cd_tired2% %cd_bored2% %cd_hurt2% %cd_common7% %cd_damage2% %cd_damage3% %cd_dying2% %cd_gen_death2% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding% %cd_padding%~
+    >>>>>>>>                  
   END 
 
   COPY ~./inlined/cd_add_soundset.tph~  ~./inlined/cd_add_soundset.tph~  EVALUATE_BUFFER
