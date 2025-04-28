@@ -18,6 +18,6 @@
 ## How do I distribute my soundsets based on this?
 
 - In order to prevent conflict with other people who would use this same template for distributing soundsets, rename everything which includes the `cd_soundsets` value to something unique. This covers the `cd_soundsets` executable and folder, the `cd_soundsets.tp2` file, and the backup folder specified in line 1 of `cd_soundsets.tp2`.
-- Additionally replace the `AUTHOR` line with your contact info in line 2.
+- Additionally replace the `SUPPORT` line with your contact info in line 2.
 
 For additional support, see https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/

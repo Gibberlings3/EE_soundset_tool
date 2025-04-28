@@ -1,4 +1,4 @@
-BACKUP ~cd_soundsets/backup~ // location to store files for uninstall purposes
+BACKUP ~weidu_external/%MOD_FOLDER%/backup~ // location to store files for uninstall purposes
 SUPPORT ~https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/~
 
 LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/english/setup.tra~
@@ -28,7 +28,7 @@ LAF cd_add_soundset
     cd_action6            = RESOLVE_STR_REF(@6) //  u
     cd_action7            = RESOLVE_STR_REF(@7) //  v
     cd_action_rare1       = RESOLVE_STR_REF(@8) //  x - warning: action rare 1 only works on BG2EE v2.6: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
-    cd_action_rare2       = RESOLVE_STR_REF(@9) //  y - warning: action rare 1 only works on BG2EE v2.6: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
+    cd_action_rare2       = RESOLVE_STR_REF(@9) //  y - warning: action rare 2 only works on BG2EE v2.6: https://www.gibberlings3.net/forums/topic/34560-adding-soundsets-to-the-ees-using-the-ee-soundset-tool/#comment-310690
     cd_attack1            = RESOLVE_STR_REF(@12) //  c_ (unofficial)
     cd_attack2            = RESOLVE_STR_REF(@13) //  d_ (unofficial)
     cd_attack3            = RESOLVE_STR_REF(@14) //  e_ (unofficial)
